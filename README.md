@@ -44,6 +44,7 @@ Run the following command to verify the environment:
 
 ```bash
 python -c "import torch, pyro, numpy; print('Environment OK')"
+```
 
 ## 2. Synthetic Field Generation
 
