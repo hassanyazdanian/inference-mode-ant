@@ -24,7 +24,7 @@ The recommended way to reproduce the results is via conda:
 ```bash
 conda env create -f environment.yml
 conda activate inference-mode-ant
-
+```
 ## Main Dependencies
 
 - **Python**: 3.12  
