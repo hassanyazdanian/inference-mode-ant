@@ -58,6 +58,7 @@ If needed, regenerate it via:
 
 ```bash
 python make_synthetic_field/generate_synthetic_field.py
+```
 
 This produces:
 
@@ -73,6 +74,7 @@ Run:
 
 ```bash
 python core/save_signal.py
+```
 
 This:
 
@@ -82,4 +84,23 @@ Computes straight-ray travel times
 
 Saves observation data to:
 
+```bash
 obs/obs_data.pickle
+```
+
+## 4. MAP Estimation (L-BFGS)
+
+Run:
+
+```bash
+python core/MAP_estimate.py --device cpu
+```
+
+This computes the maximum a posteriori (MAP) estimate of the phase velocity field under:
+
+- Whittle–Matérn prior
+
+- KL parameterization
+
+- Straight-ray forward operator
+
