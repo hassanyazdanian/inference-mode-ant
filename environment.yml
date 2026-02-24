@@ -1,0 +1,17 @@
+name: inference-mode-ant
+channels:
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.12
+  - numpy<2
+  - scipy
+  - matplotlib
+  - scikit-image
+  - pandas
+  - tqdm
+  - arviz
+  - pytorch=2.2.*
+  - pip
+  - pip:
+      - pyro-ppl==1.9.1
