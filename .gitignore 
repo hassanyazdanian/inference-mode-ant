@@ -38,3 +38,4 @@ stat/
 obs/
 outputs/
 
+.gitignore
