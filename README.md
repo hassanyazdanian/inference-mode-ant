@@ -104,3 +104,88 @@ This computes the maximum a posteriori (MAP) estimate of the phase velocity fiel
 
 - Straight-ray forward operator
 
+
+## 5. Posterior Sampling (NUTS)
+
+Run:
+
+```bash
+python core/sampling.py --device cpu
+```
+
+This performs full Bayesian posterior sampling using:
+
+- Hamiltonian Monte Carlo (NUTS)
+
+- Pyro backend
+
+- Reduced KL parameterization
+
+Samples are saved in:
+
+```bash
+stat/
+```
+
+
+## 6. Posterior Post-Processing
+
+Run:
+
+```bash
+python core/post_process.py
+```
+
+This generates:
+
+- Posterior mean field
+
+- Posterior standard deviation (UQ)
+
+- Sampling diagnostics (ESS, trace plots)
+
+
+## Core Components
+
+### `core/line_integral.py`
+
+Implements the straight-ray forward operator used to compute travel times along station pairs.
+
+### `core/prior.py`
+
+Defines the Whittle–Matérn Gaussian prior and KL expansion used to parameterize the velocity field.
+
+These two modules form the mathematical backbone of the inference engine.
+
+---
+
+## Important
+
+All commands must be executed from the repository root:
+
+```bash
+inference-mode-ant/
+```
+
+## Full Reproduction Pipeline
+
+```bash
+conda env create -f environment.yml
+conda activate inference-mode-ant
+
+python make_synthetic_field/generate_synthetic_field.py
+python core/save_signal.py
+python core/MAP_estimate.py --device cpu
+python core/sampling.py --device cpu
+python core/post_process.py
+```
+
+## Output
+
+The full pipeline produces:
+
+- True synthetic field  
+- MAP reconstruction  
+- Posterior mean  
+- Posterior uncertainty maps  
+- Sampling diagnostics  
