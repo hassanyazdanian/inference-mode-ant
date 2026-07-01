@@ -77,7 +77,7 @@ def synthetic_phantom(N_points=310, N_quad=256, L=1,dtype=torch.float64, k=5e4,
     y_true = problem.forward(slowness)
 
     noise_vec = torch.randn_like(y_true)
-    noise_vec = noise_vec / torch.norm(noise_vec)
+    #noise_vec = noise_vec / torch.norm(noise_vec)
 
     # -----------------------------------------------------------
     # 6. Save obs dict (CPU for portability)
