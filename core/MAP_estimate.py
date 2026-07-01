@@ -164,6 +164,13 @@ def run_map(device="cpu", dtype=torch.float64):
     err_tt = 100 * (torch.norm(y_obs - y_pred) / torch.norm(y_obs))
     print("Travel time Relative error %", float(err_tt))
 
+    # Noise-normalised residual RMS
+    m = y_obs.numel()
+    sqrt_m = torch.sqrt(torch.tensor(m, device=y_obs.device, dtype=y_obs.dtype))
+    res = y_obs - y_pred
+    nrms_res = torch.norm(res) / (sqrt_m * sigma)
+    print(f"NRMS_res: {nrms_res.item():.3f}")
+
     plt.show()
 
     return x, velocity_est, y_pred
