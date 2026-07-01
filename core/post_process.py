@@ -266,6 +266,11 @@ def run_postprocessing(path, device="cpu", dtype = torch.float32):
     err_tt = 100 * (torch.norm(y_obs - y_pred) / torch.norm(y_obs))
     print("Travel time Relative error %", float(err_tt))
 
+    # Noise-normalised residual RMS
+    m = y_obs.numel()
+    nrms_res = torch.norm(y_obs - y_pred) / (torch.sqrt(torch.tensor(m, device=y_obs.device, dtype=y_obs.dtype)) * sigma)
+    print(f"NRMS_res: {nrms_res.item():.3f}")
+
     # ----------------------------------------------------------
     # 12. Show some posterior samples as fields
     # ----------------------------------------------------------
