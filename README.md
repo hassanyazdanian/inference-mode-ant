@@ -1,8 +1,11 @@
 # Inference-Mode Ambient Noise Tomography
 
-This repository contains the reference implementation accompanying the GJI submission:
+This repository contains the reference implementation accompanying the paper:
 
-**"Towards Inference-Mode Ambient Noise Tomography: A Framework for Phase Velocity Field Reconstruction and Uncertainty Quantification."**
+**[A Bayesian framework with geology-informed structural priors for tomographic reconstruction and uncertainty quantification](https://doi.org/10.1093/gji/ggag374)**
+
+H. Yazdanian, G. Hillers, Y. Lu, and B. Maboudi Afkham  
+*Geophysical Journal International*, 247(2), ggag374, 2026.
 
 It provides a fully reproducible synthetic experiment (regular station geometry) demonstrating Bayesian phase velocity reconstruction using:
 
@@ -179,6 +182,26 @@ python core/MAP_estimate.py --device cpu
 python core/sampling.py --device cpu
 python core/post_process.py
 ```
+
+## Citation
+
+If you use this code in your research, please cite:
+
+```bibtex
+@article{yazdanian2026bayesian,
+  author  = {Yazdanian, H. and Hillers, G. and Lu, Y. and Maboudi Afkham, B.},
+  title   = {A Bayesian framework with geology-informed structural priors
+             for tomographic reconstruction and uncertainty quantification},
+  journal = {Geophysical Journal International},
+  year    = {2026},
+  volume  = {247},
+  number  = {2},
+  eid     = {ggag374},
+  doi     = {10.1093/gji/ggag374},
+  url     = {https://doi.org/10.1093/gji/ggag374}
+}
+```
+
 
 ## Output
 
