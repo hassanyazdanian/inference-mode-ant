@@ -183,6 +183,17 @@ python core/sampling.py --device cpu
 python core/post_process.py
 ```
 
+
+## Output
+
+The full pipeline produces:
+
+- True synthetic field  
+- MAP reconstruction  
+- Posterior mean  
+- Posterior uncertainty maps  
+- Sampling diagnostics
+
 ## Citation
 
 If you use this code in your research, please cite:
@@ -201,14 +212,3 @@ If you use this code in your research, please cite:
   url     = {https://doi.org/10.1093/gji/ggag374}
 }
 ```
-
-
-## Output
-
-The full pipeline produces:
-
-- True synthetic field  
-- MAP reconstruction  
-- Posterior mean  
-- Posterior uncertainty maps  
-- Sampling diagnostics  
